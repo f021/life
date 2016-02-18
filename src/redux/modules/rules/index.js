@@ -1,1 +1,3 @@
-export default import rules from './reducer'
+import rules from './reducer'
+
+export default rules

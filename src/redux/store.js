@@ -1,4 +1,6 @@
-import * as reducers from './modules'
-import { combineReducers } from 'redux'
+import rootReducer from './modules'
+import { createStore } from 'redux'
 
-export const app = combineReducers(reducers)
+const store = createStore(rootReducer)
+
+export default store

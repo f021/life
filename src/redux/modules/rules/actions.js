@@ -14,11 +14,8 @@ const actionCreate = type =>
 
 // action creators
 
-export const setBornRule = () =>
-  actionCreate(SET_BORN_RULE)
+export const setBornRule = actionCreate(SET_BORN_RULE)
 
-export const setAloneRul = () =>
-  actionCreate(SET_ALONE_RULE)
+export const setAloneRule = actionCreate(SET_ALONE_RULE)
 
-export const setOwerflowRule = () =>
-  actionCreate(SET_OVERFLOW_RULE)
+export const setOverflowRule = actionCreate(SET_OVERFLOW_RULE)

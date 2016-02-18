@@ -1,7 +1,7 @@
 import initialState from './initial-state'
 import { SET_ALONE_RULE, SET_OVERFLOW_RULE, SET_BORN_RULE } from './actions'
 
-export default rules = ( state = initialState, action) => {
+const rules = ( state = initialState, action) => {
   switch (action.type) {
     case SET_ALONE_RULE:
       return {
@@ -22,3 +22,5 @@ export default rules = ( state = initialState, action) => {
       return state
   }
 }
+
+export default rules

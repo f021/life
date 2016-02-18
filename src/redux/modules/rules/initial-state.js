@@ -8,8 +8,11 @@
 // 4. Any dead cell with exactly three live neighbours becomes a live cell,
 // as if by reproduction.
 
-export default const initialState = {
+const initialState = {
   born: 3,
   alone: 2,
   overflow: 3
 }
+
+
+export default initialState
