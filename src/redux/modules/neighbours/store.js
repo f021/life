@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
-import rules from './reducer'
+import neighbours from './reducer'
 
-const store = createStore(rules)
+const store = createStore(neighbours)
 
 export default store

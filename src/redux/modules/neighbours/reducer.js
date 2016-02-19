@@ -1,22 +1,38 @@
 import initialState from './initial-state'
-import { SET_ALONE_RULE, SET_OVERFLOW_RULE, SET_BORN_RULE } from './actions'
+import { TOGGLE_MODE, TOGGLE_POINT, SET_SIZE } from './actions'
 
 const rules = ( state = initialState, action) => {
+
+  const change = (elm) => state.arr.map((x, i) =>
+    i === action.index ? elm : x)
+
   switch (action.type) {
-    case SET_ALONE_RULE:
+    case SET_SIZE:
       return {
-         ...state,
-         alone: action.number
+        // todo : write function for array
+         ...state
        }
-    case SET_OVERFLOW_RULE:
+    case TOGGLE_MODE:
       return {
         ...state,
-        overflow: action.number
+        mode: !state.mode
       }
-    case SET_BORN_RULE:
-      return {
-        ...state,
-        born: action.number
+    case TOGGLE_POINT:
+      if (state.mode) {
+        return {
+          ...state,
+          arr: [
+            ...state.arr.slice(0, action.index),
+            state.arr[action.index] ? 0 : 1,
+            ...state.arr.slice(action.index + 1)
+          ]
+        }
+      } else {
+        return {
+          ...state,
+          startPoint: action.index,
+          arr: [...state.arr]
+        }
       }
     default:
       return state

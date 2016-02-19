@@ -1,3 +1,3 @@
-import rules from './reducer'
+import neighbours from './reducer'
 
-export default rules
+export default neighbours 

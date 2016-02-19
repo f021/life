@@ -1,19 +1,21 @@
 // action types
 
-export const SET_BORN_RULE = 'SET_BORN_RULE'
-export const SET_ALONE_RULE = 'SET_ALONE_RULE'
-export const SET_OVERFLOW_RULE = 'SET_OVERFLOW_RULE'
-
-// action fabric
-
-const actionCreate = type =>
-  number => ({
-    type,
-    number
-  })
+export const TOGGLE_POINT = 'TOGGLE_POINT'
+export const TOGGLE_MODE = 'TOGGLE_MODE'
+export const SET_SIZE = 'SET_SIZE'
 
 // action creators
 
-export const setBornRule = actionCreate(SET_BORN_RULE)
-export const setAloneRule = actionCreate(SET_ALONE_RULE)
-export const setOverflowRule = actionCreate(SET_OVERFLOW_RULE)
+export const setNeighboursSize = (width) => ({
+  type: SET_SIZE,
+  w: width
+})
+
+export const toggleNeighboursPoint = (index) => ({
+  type: TOGGLE_POINT,
+  index
+})
+
+export const toggleNeighboursMode = () => ({
+  type: TOGGLE_MODE
+})
