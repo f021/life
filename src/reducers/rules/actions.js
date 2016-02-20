@@ -7,10 +7,7 @@ export const SET_OVERFLOW_RULE = 'SET_OVERFLOW_RULE'
 // action fabric
 
 const actionCreate = type =>
-  number => ({
-    type,
-    number
-  })
+  rule => ({ type, rule })
 
 // action creators
 

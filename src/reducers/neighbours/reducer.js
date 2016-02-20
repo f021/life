@@ -1,23 +1,23 @@
 import initialState from './initial-state'
-import { TOGGLE_MODE, TOGGLE_POINT, SET_SIZE } from './actions'
+import {
+  TOGGLE_NEIGHBOURS_MODE,
+  TOGGLE_NEIGHBOURS_POINT,
+  SET_NEIGHBOURS_SIZE
+} from './actions'
 
 const rules = ( state = initialState, action) => {
-
-  const change = (elm) => state.arr.map((x, i) =>
-    i === action.index ? elm : x)
-
   switch (action.type) {
-    case SET_SIZE:
+    case SET_NEIGHBOURS_SIZE:
       return {
         // todo : write function for array
          ...state
        }
-    case TOGGLE_MODE:
+    case TOGGLE_NEIGHBOURS_MODE:
       return {
         ...state,
         mode: !state.mode
       }
-    case TOGGLE_POINT:
+    case TOGGLE_NEIGHBOURS_POINT:
       if (state.mode) {
         return {
           ...state,
@@ -31,7 +31,7 @@ const rules = ( state = initialState, action) => {
         return {
           ...state,
           startPoint: action.index,
-          arr: [...state.arr]
+          arr: [...state.arr ]
         }
       }
     default:

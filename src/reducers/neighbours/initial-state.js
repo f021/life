@@ -1,5 +1,5 @@
 // default conway's game of life
-// pattern of neighbours
+// pattern for neighbours
 
 const initialState = {
   mode: true, // if (true) { toggle point in arr } else { change startPoint }

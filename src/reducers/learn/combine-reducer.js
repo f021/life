@@ -1,4 +1,4 @@
-export const combineRedicer = (reducers) =>
+export const combineReducer = (reducers) =>
   (state = {}, action) =>
     Object.keys(reducers).reduce(
       (nextState, key) => {
