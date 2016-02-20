@@ -1,33 +1,11 @@
 import rootReducer from '.././reducers'
-import { createStore, applyMiddleware } from 'redux'
-
-const logger = store => next => action => {
-  console.group(action.type)
-  console.info('dispatching', action)
-  let result = next(action)
-  console.log('next state', store.getState())
-  console.groupEnd(action.type)
-  return result
-}
+import { createStore } from 'redux'
 
 
-const logger2 = store => next => action => {
-  console.group(action.type)
-  console.info('dispatching', action)
-  let result = next(action)
-  console.log('logger2')
-  console.log('next state', store.getState())
-  console.groupEnd(action.type)
-  return result
-}
+const store = createStore(rootReducer)
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(logger)
-)
-
-store.dispatch({type: 'TOGGLE_NEIGHBOURS_POINT', index: 1})
-
+store.dispatch({type: 'TOGGLE_NEIGHBOURS_MODE'})
+store.dispatch({type: 'SET_PLAYGROUND'})
 console.log(store.getState())
 
 export default store

@@ -18,6 +18,7 @@ const rules = ( state = initialState, action) => {
         mode: !state.mode
       }
     case SET_PLAYGROUND:
+      console.log(state)
       return {
         ...state,
         ...action.playground
