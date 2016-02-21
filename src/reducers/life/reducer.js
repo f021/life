@@ -11,6 +11,8 @@ const logic = (state = initialState, action) => {
     case 'SET_BORN_RULE':
     case 'TOGGLE_NEIGHBOURS_POINT':
       return {...state, startPoint: 'a'}
+    case 'TICK':
+      console.log(state.timer)
     default:
       return state
   }

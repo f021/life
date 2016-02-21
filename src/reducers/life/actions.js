@@ -1,6 +1,8 @@
 export * from './rules/actions'
 export * from './playground/actions'
 export * from './neighbours/actions'
+export * from './player/actions'
+
 
 export const GET_NEXT_POPULATION = 'GET_NEXT_POPULATION'
 
