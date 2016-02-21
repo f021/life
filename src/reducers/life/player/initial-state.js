@@ -9,9 +9,8 @@
 // as if by reproduction.
 
 const initialState = {
-  born: 3,
-  alone: 2,
-  overflow: 3
+  autohide: false,
+  playing: false
 }
 
 export default initialState

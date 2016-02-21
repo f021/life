@@ -1,3 +1,3 @@
 import neighbours from './reducer'
 
-export default neighbours 
+export default neighbours

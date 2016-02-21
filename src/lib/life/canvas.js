@@ -1,4 +1,4 @@
-import { compose, box } from './util'
+import { compose, box } from '../../utils'
 
 const painter = (setup, draw, elm) => {
   const canvas = document.createElement('canvas')

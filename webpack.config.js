@@ -42,7 +42,7 @@ const common = {
         loader: 'babel',
         query: {
           cacheDirectory: true,
-          presets: ['react', 'es2015', 'stage-1']
+          presets: ['react', 'es2015', 'stage-1', 'stage-2']
         },
         // Parse only app files! Without this it will go through entire project.
         // In addition to being slow, that will most likely result in an error.

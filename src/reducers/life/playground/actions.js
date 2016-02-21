@@ -15,7 +15,7 @@ export const setPlaygroundMode = () => ({
   type: SET_PLAYGROUND_MODE
 })
 
-export const setPlayground = (playground) => ({
+export const setPlayground = (scene) => ({
   type: SET_PLAYGROUND,
-  playground
+  scene
 })

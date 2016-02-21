@@ -8,7 +8,7 @@ export const SET_NEIGHBOURS_SIZE = 'SET_NEIGHBOURS_SIZE'
 
 export const setNeighboursSize = (width) => ({
   type: SET_NEIGHBOURS_SIZE,
-  w: width
+  width
 })
 
 export const toggleNeighboursPoint = (index) => ({

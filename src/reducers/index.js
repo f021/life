@@ -1,6 +1,3 @@
-import * as reducers from './reducers'
-import { combineReducers } from 'redux'
+import life from './life'
 
-const rootReducer = combineReducers(reducers)
-
-export default rootReducer
+export default life

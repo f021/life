@@ -40,3 +40,13 @@ export const trigger = (fn, fn2, f = false) =>
     f = !f
     f ? fn(x) : fn2(x)
   }
+
+export const isFunc = x => typeof x === 'function' ? x : false
+
+export const getMethods = obj =>
+    Object.keys(obj).map(key =>
+      isFunc(obj[key]))
+
+export const toggleKey = obj => key => ({
+  ...obj, key: !obj[key]
+})

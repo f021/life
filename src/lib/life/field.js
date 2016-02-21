@@ -1,4 +1,4 @@
-import { compose } from './util.js'
+import { compose } from '../../utils'
 
 // convert index of array to xy - coordinate
 // array.length = field.length = w * h

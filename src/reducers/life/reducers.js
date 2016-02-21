@@ -1,4 +1,4 @@
 export neighbours from './neighbours'
 export rules from './rules'
 export playground from './playground'
-export visibility from './visibility'
+export player from './player'

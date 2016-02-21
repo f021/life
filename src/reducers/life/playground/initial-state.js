@@ -4,7 +4,7 @@
 const initialState = {
   width: 0,
   flag: true,
-  arr: []
+  scene: []
 }
 
 export default initialState

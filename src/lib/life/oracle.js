@@ -1,4 +1,4 @@
-import { sum } from './util'
+import { sum } from '../../utils'
 import getAddressBook from './address-book'
 
 const Oracle = ({ playground, rules, neighbors }) => {

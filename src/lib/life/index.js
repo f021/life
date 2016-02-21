@@ -1,4 +1,4 @@
-import { notEqual, norma } from './util'
+import { notEqual, norma } from '../../utils'
 import Oracle from './oracle'
 
 const Life = (battlefield, current) => {

@@ -5,7 +5,7 @@ import {
   SET_NEIGHBOURS_SIZE
 } from './actions'
 
-const rules = ( state = initialState, action) => {
+const neighbours = ( state = initialState, action) => {
   switch (action.type) {
     case SET_NEIGHBOURS_SIZE:
       return {
@@ -39,4 +39,4 @@ const rules = ( state = initialState, action) => {
   }
 }
 
-export default rules
+export default neighbours

@@ -5,7 +5,7 @@ import {
   SET_PLAYGROUND_MODE
 } from './actions'
 
-const rules = ( state = initialState, action) => {
+const playground = ( state = initialState, action) => {
   switch (action.type) {
     case SET_PLAYGROUND_SIZE:
       return {
@@ -21,11 +21,11 @@ const rules = ( state = initialState, action) => {
       console.log(state)
       return {
         ...state,
-        ...action.playground
+        ...action.scene
       }
     default:
       return state
   }
 }
 
-export default rules
+export default playground

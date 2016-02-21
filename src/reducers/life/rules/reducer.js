@@ -16,7 +16,7 @@ const rules = ( state = initialState, action) => {
     case SET_OVERFLOW_RULE:
       return newState('overflow')
     case SET_BORN_RULE:
-      return newStaet('born')
+      return newState('born')
     default:
       return state
   }

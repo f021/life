@@ -1,4 +1,4 @@
-import { compose, trigger } from './util'
+import { compose, trigger } from '../../utils'
 import Maps from './maps'
 
 
