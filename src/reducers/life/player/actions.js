@@ -23,14 +23,14 @@ export const hide = actionCreate(HIDE)
 
 export const play = (delay = 1000/60) =>
   (dispatch, getState) => {
-  const timerId = setInterval(() => {
+  const timerId = setInterval(() =>
     dispatch(tick)
-  }, delay)
-    dispatch({type: PLAY, timerId})
+    , delay)
+    dispatch({ type: PLAY, timerId })
   }
 
 export const stop = () =>
   (dispatch, getState) => {
     clearInterval(getState().timerId)
-    dispatch({type: STOP, timerId: null})
+    dispatch({ type: STOP, timerId: null })
   }

@@ -2,17 +2,16 @@ import { mergeReducers } from '../../lib/redux-merge'
 import Life from '../../lib/life'
 import initialState from './initial-state'
 import * as reducers from './reducers'
-import { GET_NEXT_POPULATION } from './actions'
+import {
+  PLAY, STOP, NEXT, PREV, CLEAR_SCENE, GET_NEXT_POPULATION,
+  INSTALL
+ } from './actions'
 
 
 const logic = (state = initialState, action) => {
   switch(action.type) {
-    case 'START':
-    case 'SET_BORN_RULE':
-    case 'TOGGLE_NEIGHBOURS_POINT':
-      return {...state, startPoint: 'a'}
-    case 'TICK':
-      console.log(state.timer)
+    case INSTALL:
+
     default:
       return state
   }

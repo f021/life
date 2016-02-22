@@ -15,7 +15,7 @@ const playground = ( state = initialState, action) => {
     case SET_PLAYGROUND_MODE:
       return {
         ...state,
-        mode: !state.mode
+        tor: !state.tor
       }
     case SET_PLAYGROUND:
       console.log(state)

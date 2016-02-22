@@ -3,7 +3,7 @@
 
 const initialState = {
   width: 0,
-  flag: true,
+  tor: true,
   scene: []
 }
 
