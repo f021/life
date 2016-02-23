@@ -1,6 +1,6 @@
 import initialState from './initial-state'
-import {  PLAY, STOP,
-  HIDE
+import {  PLAY, PAUSE, HIDE,
+  SET_FULL_PAGE
  } from './actions'
 
 const player = ( state = initialState, action) => {
@@ -11,16 +11,21 @@ const player = ( state = initialState, action) => {
         timer: state.timer + 1
       }
     case PLAY:
-    case STOP:
+    case PAUSE:
       return {
         ...state,
-        playing: !state.playing,
+        playing: action.type === PLAY ? true : false,
         timerId: action.timerId
       }
     case HIDE:
       return {
         ...state,
         autohide: !state.autohide
+      }
+    case SET_FULL_PAGE:
+      return {
+        ...state,
+        fullPage: !state.fullPage
       }
     default:
       return state
