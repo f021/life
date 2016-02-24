@@ -1,16 +1,17 @@
 import { connect } from 'react-redux'
-import { play, stop, setFullPage } from '../actions'
+import { play, stop, setFullPage, getNextPopulation } from '../actions'
 import Player from '../components/Player'
 
 const mapStateToProps = (state) => ({
-  timer: state.timer,
-  speed: state.speed
+  ...state
 })
 
 const mapDispatchToProps = (dispatch) => ({
   play: () => dispatch(play()),
   stop: () => dispatch(stop()),
-  setFullPage: () => dispatch(setFullPage)
+  setFullPage: () => dispatch(setFullPage),
+  getNextPopulation: () => dispatch(
+    getNextPopulation())
 })
 
 const PlayerLife = connect(

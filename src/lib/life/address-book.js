@@ -1,9 +1,11 @@
 import Maps from './maps'
 
 // getAddressBook :: { Playground } -> { Pattern } -> [ [ Int ] ]
-const getAddressBook = (source, target) =>
-  Maps({...source}).getIndexMaps(
-    Maps({...target}).getVectorMap(
-      target.arr, target.startPoint))
+const getAddressBook = ({
+  width, height, tor,
+  w, h, startPoint, arr
+}) =>
+  Maps({ w: width, h: height, tor }).getIndexMaps(
+    Maps({ w, h }).getVectorMap(arr, startPoint))
 
 export default getAddressBook

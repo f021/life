@@ -2,7 +2,8 @@
 // flag = toroidal array or not
 
 const initialState = {
-  width: 0,
+  width: 100,
+  height: 100,
   tor: true,
   scene: []
 }

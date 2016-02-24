@@ -2,6 +2,7 @@ import rootReducer from '../reducers'
 import { createStore, applyMiddleware } from 'redux'
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk'
+import life from '../middleware/life'
 
 const logger = createLogger()
 

@@ -1,10 +1,10 @@
 import { sum } from '../../utils'
 import getAddressBook from './address-book'
 
-const Oracle = ({ playground, rules, neighbors }) => {
+const Oracle = (state) => {
 
-  const { alone, born, overflow } = rules
-  const address = getAddressBook(playground, neighbors)
+  const { alone, born, overflow } = state
+  const address = getAddressBook(state)
 
 // env :: [ Int ] -> [ Int ] -> Int
   const env = (xs, arr) =>
@@ -18,11 +18,11 @@ const Oracle = ({ playground, rules, neighbors }) => {
       : n === born && 2 || 0
 
 // fate :: [ Int ] -> [ Int ]
-  const askFate = state =>
+  const askFate = current =>
     state.map((cell, i) =>
-      verdict(cell, sum(env(address[i], state))))
+      verdict(cell, sum(env(address[i], current))))
 
-  return { askFate }
+  return askFate
 }
 
 export default Oracle

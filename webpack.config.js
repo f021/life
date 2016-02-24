@@ -13,9 +13,7 @@ const PATHS = {
 };
 // точка входа
 const common = {
-  entry: {
-    app: PATHS.app
-  },
+  entry: [ 'babel-polyfill', PATHS.app ],
   // Add resolve.extensions.
   // '' is needed to allow imports without an extension.
   // Note the .'s before extensions as it will fail to match without!!!
@@ -42,7 +40,7 @@ const common = {
         loader: 'babel',
         query: {
           cacheDirectory: true,
-          presets: ['react', 'es2015', 'stage-1', 'stage-2']
+          presets: ['react', 'es2015', 'stage-0', 'stage-1', 'stage-2']
         },
         // Parse only app files! Without this it will go through entire project.
         // In addition to being slow, that will most likely result in an error.
@@ -55,6 +53,7 @@ const common = {
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
+
     devServer: {
       contentBase: PATHS.build,
 
@@ -84,7 +83,7 @@ if (TARGET === 'start' || !TARGET) {
       new NpmInstallPlugin({
         save: true // --save
       })
-    ],
+    ]
   });
 }
 
