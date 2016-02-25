@@ -2,9 +2,8 @@ import game from '../../lib/life/setup'
 
 let evolution = game()
 export * from './rules/actions'
-export * from './playground/actions'
+export * from './scene/actions'
 export * from './neighbours/actions'
-export * from './player/actions'
 
 export const INSTALL = 'INSTALL'
 export const RESET_ALL = 'RESET_ALL'

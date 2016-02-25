@@ -1,16 +1,6 @@
-// action types
-
-export const SET_BORN_RULE = 'SET_BORN_RULE'
-export const SET_ALONE_RULE = 'SET_ALONE_RULE'
-export const SET_OVERFLOW_RULE = 'SET_OVERFLOW_RULE'
-
-// action fabric
-
-const actionCreate = type =>
-  rule => ({ type, rule })
-
-// action creators
-
-export const setBornRule = actionCreate(SET_BORN_RULE)
-export const setAloneRule = actionCreate(SET_ALONE_RULE)
-export const setOverflowRule = actionCreate(SET_OVERFLOW_RULE)
+export const SET_RULE = 'SET_RULE'
+export const setRule = (rule, value) => ({
+  type: 'SET_RULE',
+  rule,
+  value
+})

@@ -3,7 +3,7 @@ import { play, stop, setFullPage, getNextPopulation } from '../actions'
 import Player from '../components/Player'
 
 const mapStateToProps = (state) => ({
-  ...state
+  ...state.player
 })
 
 const mapDispatchToProps = (dispatch) => ({

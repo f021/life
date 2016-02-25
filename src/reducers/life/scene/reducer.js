@@ -1,23 +1,23 @@
 import initialState from './initial-state'
 import {
-  SET_PLAYGROUND_SIZE,
-  SET_PLAYGROUND,
-  SET_PLAYGROUND_MODE
+  SET_SCENE_SIZE,
+  SET_SCENE,
+  SET_SCENE_MODE
 } from './actions'
 
-const playground = ( state = initialState, action) => {
+const scene = ( state = initialState, action) => {
   switch (action.type) {
-    case SET_PLAYGROUND_SIZE:
+    case SET_SCENE_SIZE:
       return {
          ...state,
          alone: action.number
        }
-    case SET_PLAYGROUND_MODE:
+    case SET_SCENE_MODE:
       return {
         ...state,
         tor: !state.tor
       }
-    case SET_PLAYGROUND:
+    case SET_SCENE:
       console.log(state)
       return {
         ...state,
@@ -28,4 +28,4 @@ const playground = ( state = initialState, action) => {
   }
 }
 
-export default playground
+export default scene

@@ -27,12 +27,12 @@ export const play = () =>
   (dispatch, getState) => {
   const timerId = setInterval(() =>
     dispatch(tick)
-    , getState().speed)
+    , getState().player.speed)
     dispatch({ type: PLAY, timerId })
   }
 
 export const stop = () =>
   (dispatch, getState) => {
-    clearInterval(getState().timerId)
+    clearInterval(getState().player.timerId)
     dispatch({ type: PAUSE, timerId: 0 })
   }

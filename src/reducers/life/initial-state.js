@@ -1,8 +1,5 @@
 // current state of conway's game of life
 
-const initialState = {
-    current: [],
-    chance: .8
-}
+const initialState = []
 
 export default initialState

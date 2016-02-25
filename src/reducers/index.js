@@ -1,3 +1,8 @@
 import life from './life'
+import player from './player'
 
-export default life
+import { combineReducers } from 'redux'
+
+export default combineReducers({
+  life, player
+})

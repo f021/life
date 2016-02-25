@@ -1,3 +1,3 @@
-import life from './reducer'
+import life from './reducers'
 
 export default life
