@@ -1,3 +1,3 @@
-import scene from './reducer'
+import reducer from './reducer'
 
-export default scene
+export default reducer

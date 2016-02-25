@@ -6,9 +6,9 @@ export const SET_NEIGHBOURS_SIZE = 'SET_NEIGHBOURS_SIZE'
 
 // action creators
 
-export const setNeighboursSize = (width) => ({
+export const setNeighboursSize = (side, size) => ({
   type: SET_NEIGHBOURS_SIZE,
-  width
+  side, size
 })
 
 export const toggleNeighboursPoint = (index) => ({
@@ -16,6 +16,6 @@ export const toggleNeighboursPoint = (index) => ({
   index
 })
 
-export const toggleNeighboursMode = () => ({
+export const toggleNeighboursMode = ({
   type: TOGGLE_NEIGHBOURS_MODE
 })

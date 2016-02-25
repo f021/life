@@ -1,15 +1,16 @@
 import React from 'react'
 import PlayerLife from '../containers/PlayerLife'
-import Scene from './Scene'
+import Scene from '../containers/Scene'
 import Rules from '../containers/Rules'
+import Neighbours from '../containers/Neighbours'
 
 const App = (props) => (
   <div style = {style}>
     <h1>Alexa</h1>
     <PlayerLife/>
-    <h1>Rules</h1>
     <Rules />
-    {/*<Scene />*/}
+    <Scene />
+    <Neighbours />
   </div>
 )
 

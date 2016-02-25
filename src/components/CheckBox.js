@@ -1,22 +1,21 @@
 import React, { PropTypes } from 'react'
 
 const CheckBox = ({
-  name, check, onClick, children
+  check, onChange, children
 }) => (
   <div>
     <label>
       {children}{' '}
       <input type='checkbox'
-        onClick={onClick}
-        {check ? 'checked' : null}
+        onChange={onChange}
+        checked={check}
       />
     </label>
   </div>
 )
 
 CheckBox.PropTypes = {
-  onClick: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   check: PropTypes.bool.isRequired
 }
 

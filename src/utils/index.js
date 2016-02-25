@@ -50,3 +50,11 @@ export const getMethods = obj =>
 export const toggleKey = obj => key => ({
   ...obj, key: !obj[key]
 })
+
+export const toRow = (arr, len) => {
+  const acc = []
+  for (let i = len; i <= arr.length; i += len) {
+    acc.push(arr.slice(i-len, i))
+  }
+  return acc
+}

@@ -10,7 +10,8 @@ const neighbours = ( state = initialState, action) => {
     case SET_NEIGHBOURS_SIZE:
       return {
         // todo : write function for array
-         ...state
+         ...state,
+         [action.side]: Number(action.size)
        }
     case TOGGLE_NEIGHBOURS_MODE:
       return {
@@ -31,7 +32,7 @@ const neighbours = ( state = initialState, action) => {
         return {
           ...state,
           startPoint: action.index,
-          arr: [...state.arr ]
+          arr: [ ...state.arr ]
         }
       }
     default:

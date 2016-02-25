@@ -10,7 +10,7 @@ const scene = ( state = initialState, action) => {
     case SET_SCENE_SIZE:
       return {
          ...state,
-         alone: action.number
+         [action.side]: Number(action.size)
        }
     case SET_SCENE_MODE:
       return {

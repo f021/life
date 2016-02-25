@@ -3,7 +3,9 @@ import InputNumber from './InputNumber'
 
 const InputNumbers = ({ fields, onChange }) => (
   <div>
-    {fields.map(field => (
+    {fields.map(field => {
+      // console.log('input', fields)
+      return(
       <InputNumber
         name={field.label}
         onChange={onChange}
@@ -12,7 +14,7 @@ const InputNumbers = ({ fields, onChange }) => (
       >
       {field.label}
       </InputNumber>
-    ))}
+    )})}
   </div>
 )
 

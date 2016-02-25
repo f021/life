@@ -2,10 +2,9 @@
 // tor = toroidal array or not
 
 const initialState = {
-  width: 20,
-  height: 30,
+  w: 20,
+  h: 30,
   tor: true,
-  scene: []
 }
 
 export default initialState

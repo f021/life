@@ -2,6 +2,50 @@ body {
   background: white;
   color: black;
   font-family: 'sans-serif';
+  font-size: 1em;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+input[type='number'] {
+  width: 3em;
+  height: 100%;
+  text-align: right;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  color: red;
+  border: 1px solid lightgrey;
+}
+
+label {
+  display: block;
+}
+
+td {
+  width: 15px;
+  height: 15px;
+}
+
+table {
+  cursor: pointer;
+  background-color: white;
+}
+
+.cell-start {
+  background-color: rgba(200, 0, 0, 1);
+}
+
+.cell-1 {
+  background-color: rgba(0, 0, 200, .5);
+}
+
+.cell-0 {
+  background-color: rgba(200, 200, 200, .8);
 }
