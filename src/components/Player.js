@@ -48,7 +48,7 @@ const Player = (props) => {
       {' '}
       <a href='#' onClick={setFullPage}>full page</a>
       {' '}
-      <a href='#' onClick={()=>getNextPopulation(go)}>life</a>
+      <a href='#' onClick={getNextPopulation}>life</a>
     </div>
   )
 }

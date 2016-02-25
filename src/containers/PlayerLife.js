@@ -10,8 +10,7 @@ const mapDispatchToProps = (dispatch) => ({
   play: () => dispatch(play()),
   stop: () => dispatch(stop()),
   setFullPage: () => dispatch(setFullPage),
-  getNextPopulation: () => dispatch(
-    getNextPopulation())
+  getNextPopulation: () => dispatch(getNextPopulation())
 })
 
 const PlayerLife = connect(

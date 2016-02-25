@@ -1,5 +1,5 @@
 
-import { add, sub } from '../../utils'
+import { add, sub } from './utils'
 import Field from './field'
 
 const Maps = ({ w, h, flag = true }) => {

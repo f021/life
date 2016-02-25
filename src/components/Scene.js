@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 class Scene extends React.Component {
 
-
   static PropTypes = {
     fullPage: PropTypes.bool.isRequired,
     // scene: PropTypes.obj
@@ -23,7 +22,7 @@ class Scene extends React.Component {
     const canvas = this.refs.canvas
     const ctx = canvas.getContext('2d')
     this.setState({ canvas, ctx }, () => {
-      this.listen('addEventListener')
+      this.mount('addEventListener')
       this.resize()
     })
   }
@@ -63,10 +62,13 @@ class Scene extends React.Component {
     const { width, height } = this.state.canvas
     const { w, h } = this.props
     this.setState({
-      size: ( width > height && w > h || width < height && w < h
-        ? Math.max(width, height)
-        : Math.min(width, height)
-      )/ Math.max(w, h)
+      size:
+      // Math.floor(
+        ( width > height && w > h || width < height && w < h
+          ? Math.max(width, height)
+          : Math.min(width, height)
+        )/ Math.max(w, h)
+      // )
     }, resolve)
   }
 
@@ -84,7 +86,7 @@ class Scene extends React.Component {
       .then(this.setOffset)
       .then(this.update)
 
-  listen = (method) => {
+  mount = method => {
     const { canvas } = this.state
     window[method]('resize', this.resize)
     canvas[method]('mousemove', this.mousemove)
@@ -130,7 +132,7 @@ class Scene extends React.Component {
     const { stroke, fill } = this.colorStyle(cell)
     ctx.beginPath()
     ctx.strokeStyle = stroke
-    // ctx.strokeWidth = '.1'
+    ctx.strokeWidth = '.1'
     ctx.fillStyle = fill
     ctx.rect(i % w * size, Math.floor(i / w) * size, size, size)
     ctx.fill()
@@ -157,7 +159,11 @@ class Scene extends React.Component {
     ctx.strokeRect(0, 0, canvas.width, canvas.height)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.translate(offset.x, offset.y)
+    // ctx.beginPath()
     current.forEach(this.drawCell)
+    // ctx.stroke()
+    // ctx.fill()
+    // ctx.endPath()
     // drawPointer()
     ctx.setTransform(1, 0, 0, 1, 0, 0)
   }
