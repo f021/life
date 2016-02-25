@@ -25,8 +25,8 @@ export const zip = (as, bs) =>
 export const not = a => !a
 
 // notEqual :: [ a ] -> [ a ] -> Boolean
-export const equal = (as, bs) =>
-    as.some((a, i) => a === bs[i])
+export const notEqual = (as, bs) =>
+    as.some((a, i) => a !== bs[i])
 
 // norma :: a -> a -> Function -> a -> a
 export const norma = (a, b, rule) => n => rule(n) ? b : a
@@ -53,3 +53,9 @@ export const toggleKey = obj => key => ({
 
 export const same = (a, b) =>
   JSON.stringify(a) === JSON.stringify(b)
+
+
+export const renew = (prev, next={}) =>
+  not(same(prev, next)) ?
+    next :
+    prev

@@ -1,4 +1,4 @@
-import game from '../../lib/life'
+import game from '../../lib/life/setup'
 
 let evolution = game()
 export * from './rules/actions'
@@ -14,23 +14,21 @@ export const GET_NEXT_POPULATION = 'GET_NEXT_POPULATION'
 const convert = obj => {
   return {
     current: obj.current,
-    state: {
-      rules: {
+    rules: {
         alone: obj.alone,
         born: obj.born,
         overflow: obj.overflow
       },
-      pattern: {
+    neighbours: {
         startPoint: obj.startPoint,
         arr: obj.arr,
         w: obj.w,
         h: obj.h
       },
-      scene: {
+    scene: {
         w: obj.width,
         h: obj.height,
         flag: obj.tor
-      }
     }
   }
 }
@@ -38,6 +36,8 @@ const convert = obj => {
 
  export const getNextPopulation = () =>
   (dispatch, getState) => {
-    console.log(evolution(convert(getState())))
+    // console.log('++', evolution)
+    console.log('GET NEW STATE', evolution(convert(getState())))
+    // console.log(evolution)
     dispatch({type: 'GAME'})
   }

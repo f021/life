@@ -7,7 +7,7 @@ const logger = createLogger()
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(logger, thunk)
+  applyMiddleware(thunk)
 )
 
 export default store

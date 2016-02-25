@@ -4,6 +4,7 @@
 const initialState = {
   mode: true, // if (true) { toggle point in arr } else { change startPoint }
   w: 3,
+  h: 3,
   startPoint: 4,
   arr: [
     1, 1, 1,

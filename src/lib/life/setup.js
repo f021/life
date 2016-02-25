@@ -1,9 +1,13 @@
-import life from './life'
+import life from './index'
 
-const game = evolution => update =>
-  if (!evouliton) {
-    [ evolution, update ] = [ life(update), undefined ]
+const game = evolution =>
+  update => {
+    console.log('GAME_UPDATE', update)
+    if (!evolution) {
+      evolution = life(update)
+      return evolution.next()
+    }
+    return evolution.next(update)
   }
-  return evolution.next(update)
 
 export default game
