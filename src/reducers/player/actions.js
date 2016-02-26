@@ -2,11 +2,8 @@
 
 export const PLAY = 'PLAY'
 export const PAUSE = 'PAUSE'
-export const NEXT = 'NEXT'
-export const PREV = 'PREV'
-export const HIDE = 'HIDE'
 export const TICK = 'TICK'
-export const SET_FULL_PAGE = 'SET_FULL_PAGE'
+export const SET_SPEED = 'SET_SPEED'
 // action fabric
 
 const actionCreate = type => ({
@@ -14,25 +11,27 @@ const actionCreate = type => ({
   })
 
 // action creators
-
+export const play = actionCreate(PLAY)
 export const tick = actionCreate(TICK)
-export const next = actionCreate(NEXT)
-export const prev = actionCreate(PREV)
-export const hide = actionCreate(HIDE)
-export const setFullPage = actionCreate(SET_FULL_PAGE)
-
+export const pause = actionCreate(PAUSE)
+export const setSpeed = (speed) => ({
+  ...actionCreate(SET_SPEED),
+  speed
+})
 // async actions
 
-export const play = () =>
+export const start = () =>
   (dispatch, getState) => {
-  const timerId = setInterval(() =>
-    dispatch(tick)
-    , getState().player.speed)
-    dispatch({ type: PLAY, timerId })
-  }
-
-export const stop = () =>
-  (dispatch, getState) => {
-    clearInterval(getState().player.timerId)
-    dispatch({ type: PAUSE, timerId: 0 })
+    if (!getState().player.playing) {
+      dispatch(play)
+      setTimeout(function next() {
+        const { speed,  playing } = getState().player
+        if ( playing ) {
+          dispatch(tick)
+          setTimeout(next, speed)
+        }
+      }, 0)
+    } else {
+      dispatch(pause)
+    }
   }

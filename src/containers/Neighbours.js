@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Grid from '../components/Grid'
 import InputNumbers from '../components/InputNumbers'
-import CheckBox from '../components/CheckBox'
+import Toggle from '../components/Toggle'
 import {
   toggleNeighboursMode,
   toggleNeighboursPoint,
@@ -11,6 +11,7 @@ import {
 
 const Neighbours = ({
   fields,
+  mode,
   changeSize,
   toggleMode,
   togglePoint,
@@ -26,12 +27,12 @@ const Neighbours = ({
       onChange={changeSize}
       fields={fields}
     />
-    <CheckBox
-      onChange={toggleMode}
-      check={rest.check}
-    >
-    start
-    </CheckBox>
+    <Toggle
+      onClick={toggleMode}
+      flag={mode}
+      on='start point'
+      off='neighbours'
+    />
   </div>
 )
 

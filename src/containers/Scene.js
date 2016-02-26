@@ -5,10 +5,11 @@ import CheckBox from '../components/CheckBox'
 import { setSceneSize, setSceneMode } from '../actions'
 
 const Scene = ({
-  fields, tor, changeSize, toggleMode
-}) => {
-  // console.log(fields, flag)
-  return(
+  fields,
+  tor,
+  changeSize,
+  toggleMode
+}) => (
   <div>
     <h1>Scene</h1>
     <InputNumbers
@@ -22,7 +23,7 @@ const Scene = ({
     tor
     </CheckBox>
   </div>
-)}
+)
 
 
 const mapStateToProps = (state) => {

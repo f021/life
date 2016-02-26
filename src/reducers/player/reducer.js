@@ -1,10 +1,18 @@
 import initialState from './initial-state'
-import {  PLAY, PAUSE, HIDE,
-  SET_FULL_PAGE
- } from './actions'
+import {
+  PLAY,
+  PAUSE,
+  TICK,
+  SET_SPEED
+} from './actions'
 
 const player = ( state = initialState, action) => {
   switch (action.type) {
+    case SET_SPEED:
+      return {
+        ...state,
+        speed: action.speed
+      }
     case 'TICK':
       return {
         ...state,
@@ -14,18 +22,7 @@ const player = ( state = initialState, action) => {
     case PAUSE:
       return {
         ...state,
-        playing: action.type === PLAY ? true : false,
-        timerId: action.timerId
-      }
-    case HIDE:
-      return {
-        ...state,
-        autohide: !state.autohide
-      }
-    case SET_FULL_PAGE:
-      return {
-        ...state,
-        fullPage: !state.fullPage
+        playing: action.type === PLAY ? true : false
       }
     default:
       return state

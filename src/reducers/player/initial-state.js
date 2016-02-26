@@ -2,7 +2,6 @@
 
 const initialState = {
   playing: false,
-  timerId: null,
   timer: 0,
   speed: 1000,
 }
