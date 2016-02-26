@@ -1,17 +1,35 @@
 import initialState from './initial-state'
+import { addColumn, addRow } from '../../../utils'
 import {
   TOGGLE_NEIGHBOURS_MODE,
   TOGGLE_NEIGHBOURS_POINT,
   SET_NEIGHBOURS_SIZE
 } from './actions'
 
+const resize = (state = {}, action) => {
+  const { arr, w, startPoint } = state
+  const { side, size } = action
+  switch (side) {
+    case 'w':
+      return {
+        arr: [...addRow(arr, w, size) ],
+        startPoint: startPoint + size
+      }
+    case 'h':
+      return [...addColumn(arr, w, size)]
+    default:
+      return state
+  }
+}
+
+
 const neighbours = ( state = initialState, action) => {
   switch (action.type) {
     case SET_NEIGHBOURS_SIZE:
       return {
-        // todo : write function for array
          ...state,
-         [action.side]: Number(action.size)
+         [action.side]: action.size,
+         ...resize(state, action)
        }
     case TOGGLE_NEIGHBOURS_MODE:
       return {
@@ -31,8 +49,7 @@ const neighbours = ( state = initialState, action) => {
       } else {
         return {
           ...state,
-          startPoint: action.index,
-          arr: [ ...state.arr ]
+          startPoint: action.index
         }
       }
     default:

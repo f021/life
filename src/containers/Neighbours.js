@@ -14,18 +14,22 @@ const Neighbours = ({
   mode,
   changeSize,
   toggleMode,
-  togglePoint,
+  togglePoint, w, h, arr,
   ...rest
 }) => (
   <div>
     <h1>Pattern</h1>
     <Grid
       onClick={togglePoint}
+      w={w}
+      h={h}
+      arr={arr}
       {...rest }
     />
     <InputNumbers
       onChange={changeSize}
       fields={fields}
+      min='1'
     />
     <Toggle
       onClick={toggleMode}
@@ -49,10 +53,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   togglePoint: (index) =>
-    dispatch(toggleNeighboursPoint(index
+    dispatch(toggleNeighboursPoint(Number(index)
     )),
   changeSize: (side, value) =>
-    dispatch(setNeighboursSize(side, value)),
+    dispatch(setNeighboursSize(side, Number(value))),
   toggleMode: () => dispatch(toggleNeighboursMode)
 })
 

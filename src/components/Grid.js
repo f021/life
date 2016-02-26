@@ -14,6 +14,7 @@ const Grid = ({
           key={i}
           row={row}
           y={i}
+          arr={arr}
           {...rest}
         />
       ))}

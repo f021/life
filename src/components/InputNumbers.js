@@ -1,7 +1,12 @@
 import React, { PropTypes } from 'react'
 import InputNumber from './InputNumber'
 
-const InputNumbers = ({ fields, onChange }) => (
+const InputNumbers = ({
+  fields,
+  onChange,
+  min,
+  max
+}) => (
   <div>
     {fields.map(field => {
       // console.log('input', fields)
@@ -11,6 +16,8 @@ const InputNumbers = ({ fields, onChange }) => (
         onChange={onChange}
         value={field.value}
         key={field.label}
+        min={min}
+        step='2'
       >
       {field.label}
       </InputNumber>

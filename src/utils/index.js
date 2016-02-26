@@ -51,10 +51,63 @@ export const toggleKey = obj => key => ({
   ...obj, key: !obj[key]
 })
 
-export const toRow = (arr, len) => {
-  const acc = []
-  for (let i = len; i <= arr.length; i += len) {
-    acc.push(arr.slice(i-len, i))
-  }
-  return acc
+export const same = (a, b) =>
+  JSON.stringify(a) === JSON.stringify(b)
+
+export const renew = (prev, next={}) =>
+  not(same(prev, next)) ?
+    next :
+    prev
+
+export const fillArr = ([x, ...xs], fn) =>
+  Array.from(new Array(x), (_, i) =>
+    xs.length ? fillArr(xs, fn) : fn(i))
+
+export const fillMatrix = ([w, h], fn) =>
+  Array.from(new Array(w), () =>
+    fillArr([h], fn))
+
+export const toRow = (arr, w) =>
+  Array.from(new Array(Math.floor(arr.length/w)), (_, x) =>
+      arr.slice(x * w, w * (x + 1)
+    )
+  )
+
+export const toCol = (arr, w) =>
+  Array.from(new Array(w), (_, x) =>
+    Array.from(new Array(arr.length/w), (_,y) =>
+      arr[x + y * w]
+    )
+  )
+
+export const fromRow = (arr) =>
+  [].concat(...arr)
+
+export const fromCol = (arr) => {
+  const [ w, h ] = [ arr.length, arr[0].length]
+  return Array.from(new Array(w * h), (_, i) =>
+    arr[i % w][Math.floor(i / w)]
+  )
 }
+
+export const resizeArr = (arr, w) => {
+  const x = Math.round((w - arr.length)/2)
+  return x > 0
+    ? [
+      ...fillArr([x], () => 0),
+      ...arr,
+      ...fillArr([x- (w-arr.length)%2], () => 0)
+    ]
+    : [
+      ...arr.slice(-x, w + -x)
+    ]
+}
+
+export const todo = (from, to) =>
+  (arr, w, x) =>
+    from(to(arr, w).map(xs =>
+      resizeArr(xs, x)
+  ))
+
+export const addColumn = todo(fromCol, toCol)
+export const addRow = todo(fromRow, toRow)

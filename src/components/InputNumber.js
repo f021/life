@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 const InputNumber = ({
-  name, value, onChange, children
+  name, value, onChange, children, min, max
 }) => (
   <label>
     {children}{': '}
@@ -9,7 +9,9 @@ const InputNumber = ({
       onChange={({ target }) =>
         onChange(name, target.value)}
       value={value}
-      min='0'
+      min={min}
+      max={max}
+      step='2'
     />
   </label>
 )
